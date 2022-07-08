@@ -1,0 +1,242 @@
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+button {
+  background: transparent;
+  border: none;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+a {
+  text-decoration: none;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+body {
+  font-size: 13px;
+  line-height: 16px;
+  font-family: "Open Sans", Arial, sans-serif;
+}
+
+.container {
+  width: 880px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 5px;
+}
+
+.blocks {
+  padding: 5px 0;
+  background: #1D1F2A;
+}
+
+.blocks__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 -15px -30px;
+}
+
+.block {
+  position: relative;
+  width: calc(33.33% - 30px);
+  height: 270px;
+  margin: 0 15px 30px;
+  cursor: pointer;
+}
+
+.block:hover .block__buy,
+.block:hover .block__info:after {
+  opacity: 1;
+}
+
+.block:hover .block__rating {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.block-big {
+  width: calc(66.66% - 30px);
+}
+
+.block__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 135px;
+  padding: 12px;
+  color: #fff;
+}
+
+.block__info:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(29, 31, 42, 0)), to(#1D1F2A));
+  background: -o-linear-gradient(top, rgba(29, 31, 42, 0) 0%, #1D1F2A 100%);
+  background: linear-gradient(180deg, rgba(29, 31, 42, 0) 0%, #1D1F2A 100%);
+  opacity: 0.75;
+}
+
+.block__info:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: calc(100% - 50px);
+  height: 2px;
+  background: #fff;
+  -webkit-transition: opacity 0.3s;
+  -o-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+
+.block__info > * {
+  position: relative;
+}
+
+.block__title-price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.block__title {
+  margin-right: 20px;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.block__price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.block__price ._old-price {
+  margin-right: 4px;
+  text-decoration: line-through;
+  opacity: 0.7;
+}
+
+.block__price ._price {
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.block__category-author {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.block__category {
+  padding: 1px 4px 3px;
+  margin-right: 4px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.block__category:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.block__rating {
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 4px;
+}
+
+.block__rating__stars {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.block__rating__stars img:not(:last-child) {
+  margin-right: 1px;
+}
+
+.block__rating__count {
+  margin-left: 6px;
+  opacity: 0.5;
+}
+
+.block__buy {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #fff url("../img/icons/icons.svg#cart") no-repeat center;
+  background-size: 24px;
+  opacity: 0;
+}
+
+.block__buy:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
